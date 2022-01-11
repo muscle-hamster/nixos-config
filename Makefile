@@ -70,7 +70,6 @@ vm/bootstrap:
 		sudo reboot; \
 	"
 
-
 # copy our secrets into the VM
 vm/secrets:
 	# GPG keyring
