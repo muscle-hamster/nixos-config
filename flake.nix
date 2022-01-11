@@ -16,6 +16,7 @@
       system = "aarch64-linux";
       modules = [
        ./system/configuration.nix
+       ./users/brockm/nixos.nix
        home-manager.nixosModules.home-manager
        {
         home-manager.useGlobalPkgs = true;
@@ -26,9 +27,9 @@
 
     };
 
-    packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
+    # packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
 
-    defaultPackage.x86_64-linux = self.packages.x86_64-linux.hello;
+    # defaultPackage.x86_64-linux = self.packages.x86_64-linux.hello;
 
   };
 }

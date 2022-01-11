@@ -41,6 +41,7 @@
   services.xserver.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
   services.xserver.windowManager.i3.enable = true;
+  services.xserver.dpi = 254;
 
   
 
@@ -59,13 +60,14 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.mutableUsers = false;
+  users.mutableUsers = true;
 
-  users.users.brockm = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    hashedPassword = "$6$5afzstoy9svt/Nmk$MdFB0xk07JYP7ME6EtAlTA0g5xssFYJePX.Hvc9YsneMUXQo8il77mUDRATdgvjtoYAuNvh16LJOFrKfCSxvv/";
-  };
+  # users.users.brockm = {
+  #  isNormalUser = true;
+  #  extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+  #  hashedPassword = "$6$5afzstoy9svt/Nmk$MdFB0xk07JYP7ME6EtAlTA0g5xssFYJePX.Hvc9YsneMUXQo8il77mUDRATdgvjtoYAuNvh16LJOFrKfCSxvv/";
+    # initialPassword = "Password";
+  # };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
