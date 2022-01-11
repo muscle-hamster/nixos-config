@@ -10,6 +10,9 @@
       ./hardware-configuration.nix
     ];
 
+  # Allow unfree packages to be installed TODO: Move this to a specific user basis
+  nixpkgs.config.allowUnfree = true;
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -41,7 +44,7 @@
   services.xserver.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
   services.xserver.windowManager.i3.enable = true;
-  services.xserver.dpi = 254;
+  services.xserver.dpi = 150;
 
   
 
