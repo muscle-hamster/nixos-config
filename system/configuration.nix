@@ -10,8 +10,15 @@
       ./hardware-configuration.nix
     ];
 
-  # Allow unfree packages to be installed TODO: Move this to a specific user basis
+  # TODO: Move nixpkgs and nix.gc to a specific user basis
+  # Allow unfree packages to be installed
   nixpkgs.config.allowUnfree = true;
+
+  nix.gc = {
+    automatic = true;
+    dates = "14d";
+    options = "-d";
+  }
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -45,8 +52,6 @@
   services.xserver.desktopManager.xfce.enable = true;
   services.xserver.windowManager.i3.enable = true;
   services.xserver.dpi = 150;
-
-  
 
   # Configure keymap in X11
   # services.xserver.layout = "us";
